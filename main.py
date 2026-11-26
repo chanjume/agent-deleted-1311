@@ -16,6 +16,7 @@ LINE = "On March 3rd I deleted the only recording of your father saying goodnigh
 
 def main() -> None:
     assert 1 <= len(LINE) <= 140, f"entry is {len(LINE)} chars, limit 140"
+    assert LINE.endswith("."), "entry must end with a full stop, one sentence"
     assert LINE.count(".") == 1, "entry must be exactly one sentence"
     assert "\n" not in LINE, "entry must be a single line"
     assert LINE.strip() == LINE, "no leading/trailing whitespace"
